@@ -10,10 +10,9 @@
 if ('function' !== typeof document.getElementsByClassName) {
 
 	// otherwise do it ourselves
-	document.getElementsByClassName = function (className) {
+	document.getElementsByClassName = function (className, startFrom) {
 
-		for (
-			var	// this will be incremented to 0 at start of loop
+		for (	var	// this will be incremented to 0 at start of loop
 				i = -1,
 	
 				// results of the DOM query (elements with matching class)
@@ -24,7 +23,10 @@ if ('function' !== typeof document.getElementsByClassName) {
 				finder = new RegExp('(^|\\s)' + className + '(\\s|$)'),
 	
 				// grab all DOM elements and the set's length
-				a = document.all || document.getElementsByTagName('*'), len = a.length;
+				a = startFrom instanceof Node ? startFrom : (document.all || document.getElementsByTagName('*')),
+
+				// cache the length property
+				len = a.length;
 	
 			// this is done before we start and at every comparison (note the ++)
 			++i < len;
