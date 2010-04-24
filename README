@@ -1,0 +1,6 @@
+getElementsByClassName.js
+
+This is pretty self-explanatory, if a native method isn't present on the document
+to get DOM nodes by class name (document.getElementsByClassName), my function
+flatly traverses the DOM for elements with a particular class name (additionally,
+it supports multiple classes on an element and a starting point).
