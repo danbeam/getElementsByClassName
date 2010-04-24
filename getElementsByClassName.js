@@ -2,6 +2,7 @@
  * @author	Dan Beam <dan@danbeam.org>
  * @internal	An easy way to find DOM Nodes with a specific class
  * @param	String:className - the class we're looking for on DOM Nodes
+ * @param	Node:startFrom (optional) - a point in the DOM to start from
  * @return	Array:results - any DOM Nodes that have the specified class
  */
 
