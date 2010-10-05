@@ -25,7 +25,7 @@ if ('function' !== typeof document.getElementsByClassName) {
 				finder = new RegExp('(^|\\s)' + className + '(\\s|$)'),
 	
 				// grab all DOM elements and the set's length
-				a = startFrom instanceof Node ? startFrom : (document.all || document.getElementsByTagName('*')),
+				a = startFrom || document.all || document.getElementsByTagName('*'),
 
 				// cache the length property
 				len = a.length;
